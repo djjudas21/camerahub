@@ -1,0 +1,27 @@
+apiVersion: crunchydata.com/v1
+kind: Pgreplica
+metadata:
+  labels:
+    name: pgo-rpl1
+    pg-cluster: pgo
+    pgouser: admin
+  name: pgo-rpl1
+  namespace: pgo
+spec:
+  clustername: pgo
+  name: pgo-rpl1
+  namespace: pgo
+  replicastorage:
+    accessmode: ReadWriteMany
+    matchLabels: ""
+    name: pgo-rpl1
+    size: 1G
+    storageclass: ""
+    storagetype: create
+    supplementalgroups: ""
+  userlabels:
+    NodeLabelKey: ""
+    NodeLabelValue: ""
+    crunchy_collect: "false"
+    pg-pod-anti-affinity: ""
+    pgo-version: 4.4.1
