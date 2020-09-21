@@ -1,0 +1,37 @@
+---
+resources:
+  #  - pvc.yaml
+  #  - deployment.yaml
+  #  - ingress.yaml
+  #  - service.yaml
+
+generatorOptions:
+  labels:
+    pg-cluster: "pgo"
+    pgo-backrest-repo: "true"
+
+secretGenerator:
+  - name: pgo-backrest-repo-config
+    files:
+    - pgo-key
+    - pgo-key.pub
+    - config
+    - sshd_config
+
+  # superuser secret
+  - name: pgo-postgres-secret
+    literals:
+    - username=postgres
+    - password=Supersecurepassword*
+
+  # replication user secret
+  - name: pgo-primaryuser-secret
+    literals:
+      - username=primaryuser
+      - password=Anothersecurepassword*
+
+  # standard user secret
+  - name: pgo-hippo-secret
+    literals:
+      - username=hippo
+      - password=Moresecurepassword*
