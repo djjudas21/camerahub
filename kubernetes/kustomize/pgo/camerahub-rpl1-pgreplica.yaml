@@ -2,19 +2,19 @@ apiVersion: crunchydata.com/v1
 kind: Pgreplica
 metadata:
   labels:
-    name: pgo-rpl1
-    pg-cluster: pgo
+    name: camerahub-rpl1
+    pg-cluster: camerahub
     pgouser: admin
-  name: pgo-rpl1
+  name: camerahub-rpl1
   namespace: pgo
 spec:
-  clustername: pgo
-  name: pgo-rpl1
+  clustername: camerahub
+  name: camerahub-rpl1
   namespace: pgo
   replicastorage:
     accessmode: ReadWriteMany
     matchLabels: ""
-    name: pgo-rpl1
+    name: camerahub-rpl1
     size: 1G
     storageclass: ""
     storagetype: create

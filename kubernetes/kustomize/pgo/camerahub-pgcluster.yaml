@@ -2,20 +2,20 @@ apiVersion: crunchydata.com/v1
 kind: Pgcluster
 metadata:
   annotations:
-    current-primary: pgo
+    current-primary: camerahub
   labels:
     autofail: "true"
     crunchy-pgbadger: "false"
-    crunchy-pgha-scope: pgo
+    crunchy-pgha-scope: camerahub
     crunchy_collect: "false"
-    deployment-name: pgo
-    name: pgo
-    pg-cluster: pgo
+    deployment-name: camerahub
+    name: camerahub
+    pg-cluster: camerahub
     pg-pod-anti-affinity: ""
     pgo-backrest: "true"
     pgo-version: 4.4.1
     pgouser: admin
-  name: pgo
+  name: camerahub
   namespace: pgo
 spec:
   BackrestStorage:
@@ -23,15 +23,15 @@ spec:
     matchLabels: ""
     name: ""
     size: 1G
-    storageclass: ""
+      #storageclass: ""
     storagetype: create
     supplementalgroups: ""
   PrimaryStorage:
     accessmode: ReadWriteMany
     matchLabels: ""
-    name: pgo
+    name: camerahub
     size: 1G
-    storageclass: ""
+      #storageclass: ""
     storagetype: create
     supplementalgroups: ""
   ReplicaStorage:
@@ -39,7 +39,7 @@ spec:
     matchLabels: ""
     name: ""
     size: 1G
-    storageclass: ""
+      #storageclass: ""
     storagetype: create
     supplementalgroups: ""
   backrestLimits: {}
@@ -54,12 +54,12 @@ spec:
   ccpimage: crunchy-postgres-ha
   ccpimageprefix: registry.developers.crunchydata.com/crunchydata
   ccpimagetag: centos7-12.4-4.4.1
-  clustername: pgo
+  clustername: camerahub
   customconfig: ""
-  database: pgo
+  database: camerahub
   exporterport: "9187"
   limits: {}
-  name: pgo
+  name: camerahub
   namespace: pgo
   pgBouncer:
     limits: {}
@@ -75,9 +75,9 @@ spec:
     pgBouncer: preferred
   policies: ""
   port: "5432"
-  primarysecretname: pgo-primaryuser-secret
+  primarysecretname: camerahub-primaryuser-secret
   replicas: "0"
-  rootsecretname: pgo-postgres-secret
+  rootsecretname: camerahub-postgres-secret
   shutdown: false
   standby: false
   tablespaceMounts: {}
@@ -91,4 +91,4 @@ spec:
     crunchy_collect: "false"
     pg-pod-anti-affinity: ""
     pgo-version: 4.4.1
-  usersecretname: pgo-hippo-secret
+  usersecretname: camerahub-hippo-secret
