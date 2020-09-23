@@ -1,6 +1,5 @@
 ---
 resources:
-  - camerahub-backrest-repo-config.yaml
   - camerahub-pgcluster.yaml
   - camerahub-rpl1-pgreplica.yaml
 
@@ -10,13 +9,11 @@ generatorOptions:
     pgo-backrest-repo: "true"
 
 secretGenerator:
-  - name: pgo-backrest-repo-config
+  - name: camerahub-backrest-repo-config
     files:
-      #authorized_keys
-      #id_ed25519
-      #ssh_host_ed25519_key
-    - camerahub-key
-    - camerahub-key.pub
+    - authorized_keys
+    - id_ed25519
+    - ssh_host_ed25519_key
     - config
     - sshd_config
 
