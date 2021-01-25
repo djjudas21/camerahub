@@ -1,0 +1,21 @@
+apiVersion: v1
+entries:
+  camerahub:
+  - apiVersion: v2
+    appVersion: 0.26.2
+    created: "2021-01-25T21:02:15.61797176Z"
+    dependencies:
+    - name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.4.0
+    - name: postgresql-ha
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.3.6
+    description: A Helm chart for Kubernetes
+    digest: 326805a3c63d2e5683fc95c690ec2f7391760ddbca3eae556cc5306f8abdfb7b
+    name: camerahub
+    type: application
+    urls:
+    - https://github.com/camerahub/camerahub/releases/download/camerahub-0.1.0/camerahub-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-01-25T21:02:15.37731298Z"
